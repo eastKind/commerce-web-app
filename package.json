@@ -6,19 +6,36 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.0",
+    "graphql": "^16.6.0",
     "next": "12.3.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "recoil": "^0.7.6",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@types/node": "18.8.5",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
+    "@types/styled-components": "^5.1.26",
+    "dotenv": "^16.0.3",
     "eslint": "8.25.0",
     "eslint-config-next": "12.3.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "next-sitemap": "^3.1.25",
+    "prettier": "^2.7.1",
     "typescript": "4.8.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   }
 }
